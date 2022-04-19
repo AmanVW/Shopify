@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<appender name="customerLogAppender"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<encoder>
+			<pattern>%d{dd-MM-yyyy HH:mm:ss.SSS} ${PID} [%t] %-5p %c - %m%n
+			</pattern>
+		</encoder>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_PATH}/customer-log-%d{ddMMyy}.log
+			</fileNamePattern>
+			<!-- <fileNamePattern>${LOGS}/archived/spring-boot-logger-%d{yyyy-MM-dd}.%i.log</fileNamePattern> -->
+		</rollingPolicy>
+	</appender>
+	<root level="INFO">
+		<appender-ref ref="customerLogAppender" />
+	</root>
+</configuration>
