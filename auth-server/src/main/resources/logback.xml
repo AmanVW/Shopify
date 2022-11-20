@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="CustomerLogAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>%d{dd-MM-yyyy HH:mm:ss.SSS} ${PID} [%t] %-5p %c - %m%n </pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_PATH}/auth-server-%d{ddMMyy}.log </fileNamePattern>
+        </rollingPolicy>
+    </appender>
+    <root level="INFO">
+        <appender-ref ref="CustomerLogAppender" />
+    </root>
+</configuration>
